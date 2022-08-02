@@ -1,10 +1,11 @@
 install:
+	poetry check
 	poetry install
-	pre-commit install
+	poetry run pre-commit install
 
 update:
 	poetry update
-	pre-commit update
+	poetry run pre-commit update
 
 check:
-	pre-commit run --all-files
+	poetry run pre-commit run --all-files

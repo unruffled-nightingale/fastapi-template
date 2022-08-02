@@ -8,8 +8,19 @@ authors = ["unruffled-nightingale <unruffled.nightingale@gmail.com>"]
 python = "^3.9"
 
 [tool.poetry.dev-dependencies]
-pytest = "^5.2"
-pre-commit ="^2.20.0"
+bandit = "*"
+black = "*"
+codespell = "*"
+coverage = "*"
+flake8 = "*"
+flake8-isort = "*"
+flake8-bugbear = "*"
+flake8-deprecated = "*"
+mypy = "*"
+pre-commit = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-randomly = "*"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
