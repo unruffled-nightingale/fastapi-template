@@ -1,11 +1,36 @@
 install:
-	poetry check
 	poetry install
-	poetry run pre-commit install
 
 update:
 	poetry update
-	poetry run pre-commit update
 
-check:
-	poetry run pre-commit run --all-files
+test:
+	pytest -v --cov-config setup.cfg
+	coverage xml
+
+check-all: check-poetry check-lint check-mypy check-bandit check-private-keys check-format
+
+check-poetry:
+	poetry check
+
+check-lint:
+	poetry run flake8 .
+
+check-mypy:
+	poetry run mypy --config-file setup.cfg .
+
+check-bandit:
+	poetry run bandit -r -q . --exclude /tests
+
+check-private-keys:
+	poetry run detect-private-key
+
+check-format:
+	poetry run isort --check-only --diff .
+	poetry run black --check --diff .
+
+format:
+	poetry run black .
+	poetry run isort .
+	poetry run end-of-file-fixer
+	poetry run trailing-whitespace-fixer

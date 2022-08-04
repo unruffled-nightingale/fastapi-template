@@ -1,6 +1,5 @@
 default_stages: [commit,push]
 repos:
-
 -   repo: local
     hooks:
 
@@ -14,74 +13,16 @@ repos:
                - --branch=main
             language: system
 
-        -   id: poetry
-            name: poetry check
-            description: Validates structure of pyproject.toml
+        -   id: run-tests
+            name: run-tests
+            description: Runs unit and integration tests
+            entry: make test
             language: system
-            entry: poetry check
             pass_filenames: false
-            always_run: true
 
-        -   id: trailing-whitespace
-            name: trailing-whitespace
-            description: Ensures that a file is either empty, or ends with one newline.
-            entry: poetry run trailing-whitespace-fixer
+        -   id: run-checks
+            name: run-checks
+            entry: make check-all
+            description: Checks linting, formatting, typing, etc.
             language: system
-            types: [non-executable, file, text]
-
-        -   id: end-of-file-fixer
-            name: end-of-file-fixer
-            description: Ensures that a file is either empty, or ends with one newline.
-            entry: poetry run end-of-file-fixer
-            language: system
-            types: [non-executable, file, text]
-
-        -   id: check-yaml
-            name: check-yaml
-            description: Checks syntax of YAML files
-            entry: poetry run check-yaml
-            language: system
-            types: [yaml]
-
-        -   id: detect-private-key
-            name: detect-private-key
-            description: Checks for the existence of private keys.
-            entry: poetry run detect-private-key
-            language: system
-            types: [non-executable, file, text]
-
-        -   id: codespell
-            name: codespell
-            description: Checks for common misspellings in text files.
-            entry: poetry run codespell
-            language: system
-            types: [non-executable, file, text]
-
-        -   id: isort
-            name: isort
-            description: A Python utility that sorts imports alphabetically
-            entry: poetry run isort
-            language: system
-            types: [python]
-
-        -   id: flake8
-            name: flake8
-            description: Python Style Guide Enforcement
-            entry: poetry run flake8
-            language: system
-            types: [python]
-
-        -   id: black
-            name: black
-            description: Uncompromising Python code formatter
-            entry: poetry run black
-            language: system
-            types: [python]
-
-        -   id: bandit
-            name: bandit
-            description: Check for common security issues
-            entry: poetry run bandit
-            exclude: tests/
-            language: system
-            types: [python]
+            pass_filenames: false
