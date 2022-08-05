@@ -28,3 +28,51 @@ testcontainers = "~3.6"
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+# https://pycqa.github.io/isort/docs/configuration/options.html
+line_length = 120
+use_parentheses = "True"
+
+[tool.pytest.ini_options]
+# https://flake8.pycqa.org/en/latest/user/options.html#configuration-options
+# https://docs.pytest.org/en/6.2.x/reference.html#command-line-flags
+addopts = "-ra -v"
+
+[tool.coverage.report]
+# https://coverage.readthedocs.io/en/latest/config.html#report
+show_missing = true
+
+[tool.coverage.run]
+# https://coverage.readthedocs.io/en/latest/config.html#run
+omit = ["./tests/*"]
+
+[tool.mypy]
+# https://mypy.readthedocs.io/en/stable/config_file.html
+disallow_any_unimported = "True"
+disallow_any_generics = "True"
+disallow_incomplete_defs = "True"
+disallow_subclassing_any = "True"
+disallow_untyped_calls = "True"
+disallow_untyped_defs = "True"
+disallow_untyped_decorators = "True"
+no_implicit_optional = "True"
+pretty = "True"
+show_error_codes = "True"
+show_error_context = "True"
+strict_equality = "True"
+strict = "True"
+warn_return_any = "True"
+warn_unused_ignores = "True"
+warn_unreachable = "True"
+warn_redundant_casts = "True"
+warn_unused_configs = "True"
+
+[[tool.mypy.overrides]]
+module = "tests.*"
+disallow_any_unimported = "False"
+no_implicit_optional = "True"
+
+[[tool.mypy.overrides]]
+module = ["testcontainers.compose"]
+ignore_missing_imports = true

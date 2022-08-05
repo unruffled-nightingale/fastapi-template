@@ -13,11 +13,11 @@ start:
 test-all: test-unit test-integration
 
 test-unit:
-	pytest tests/unit -v --cov-config setup.cfg --cov
+	pytest tests/unit -v --cov-config pyproject.toml --cov
 	coverage xml
 
 test-integration:
-	pytest tests/integration -v --cov-config setup.cfg
+	pytest tests/integration -v --cov-config pyproject.toml
 
 check-all: check-poetry check-lint check-mypy check-bandit check-private-keys check-format
 
@@ -28,7 +28,7 @@ check-lint:
 	poetry run flake8 .
 
 check-mypy:
-	poetry run mypy --config-file setup.cfg .
+	poetry run mypy --config-file pyproject.toml .
 
 check-bandit:
 	poetry run bandit -r -q . --exclude /tests
