@@ -7,6 +7,8 @@ authors = ["unruffled-nightingale <unruffled.nightingale@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 fastapi = "~0.79"
+requests = "~2"
+types-requests = "~2"
 uvicorn = { extras = ["standard"], version = "~0.18" }
 
 [tool.poetry.dev-dependencies]
@@ -21,6 +23,7 @@ pre-commit-hooks = "*"
 pytest = "*"
 pytest-cov = "*"
 pytest-randomly = "*"
+testcontainers = "~3.6"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

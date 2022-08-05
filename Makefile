@@ -1,3 +1,6 @@
+NAME=fastapi_starter
+VERSION=$(shell git rev-parse HEAD)
+
 install:
 	poetry install
 
@@ -7,9 +10,14 @@ update:
 start:
 	uvicorn fastapi_starter.main:app --reload
 
-test:
-	pytest -v --cov-config setup.cfg --cov
+test-all: test-unit test-integration
+
+test-unit:
+	pytest tests/unit -v --cov-config setup.cfg --cov
 	coverage xml
+
+test-integration:
+	pytest tests/integration -v --cov-config setup.cfg
 
 check-all: check-poetry check-lint check-mypy check-bandit check-private-keys check-format
 
@@ -37,3 +45,9 @@ format:
 	poetry run isort .
 	poetry run end-of-file-fixer
 	poetry run trailing-whitespace-fixer
+
+docker-build:
+	docker build -t $(NAME):latest .
+
+docker-run: docker-build
+	docker run -p 8000:8000 -d $(NAME):latest

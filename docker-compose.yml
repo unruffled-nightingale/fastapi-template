@@ -1,0 +1,6 @@
+services:
+  fastapi_starter:
+    build:
+      context: .
+    ports:
+      - "8000:8000"

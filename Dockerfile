@@ -1,19 +1,21 @@
+# TODO - Update and follow best practices - https://testdriven.io/blog/docker-best-practices/
+
 FROM python:3.10-slim as build
 
 COPY pyproject.toml poetry.lock ./
 
-RUN poetry config virtualenvs.create false && poetry install --no-root --no-dev -n
+RUN pip install poetry && \
+ poetry config virtualenvs.create false && \
+ poetry install --no-dev --no-root
 
 
 FROM python:3.10-slim
 
-WORKDIR /app
+COPY --from=build /usr/local /usr/local
+COPY . /app
 
-COPY --from=build /usr/local usr/local
-COPY --chown=app-usr:app-usr . /app
+WORKDIR /app
 
 EXPOSE 8000
 
-USER app-usr
-
-CMD ["uvicorn", "fastapi_starter.app:app", "--host", "0.0.0.0", "--port", "8000"]
+ENTRYPOINT ["uvicorn", "fastapi_starter.main:app", "--host", "0.0.0.0", "--port", "8000"]

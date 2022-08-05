@@ -13,10 +13,10 @@ repos:
                - --branch=main
             language: system
 
-        -   id: run-tests
-            name: run-tests
+        -   id: run-unit-tests
+            name: run-unit-tests
             description: Runs unit and integration tests
-            entry: make test
+            entry: make test-unit
             language: system
             pass_filenames: false
 
