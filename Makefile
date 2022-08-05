@@ -4,8 +4,11 @@ install:
 update:
 	poetry update
 
+start:
+	uvicorn fastapi_starter.main:app --reload
+
 test:
-	pytest -v --cov-config setup.cfg
+	pytest -v --cov-config setup.cfg --cov
 	coverage xml
 
 check-all: check-poetry check-lint check-mypy check-bandit check-private-keys check-format
