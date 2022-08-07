@@ -26,4 +26,4 @@ jobs:
         POETRY_VIRTUALENVS_CREATE: false
     - name: Check linting, formatting and security
       run: |
-        make check
+        make check-all
