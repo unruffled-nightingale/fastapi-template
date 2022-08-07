@@ -19,8 +19,8 @@ def compose(docker_dir: str) -> DockerCompose:
 
 @pytest.fixture(scope="module")
 def url(compose: DockerCompose) -> str:
-    host = compose.get_service_host("fastapi_starter", 8000)
-    port = compose.get_service_port("fastapi_starter", 8000)
+    host = compose.get_service_host("fastapi_template", 8000)
+    port = compose.get_service_port("fastapi_template", 8000)
     return f"http://{host}:{port}"
 
 

@@ -1,5 +1,5 @@
 services:
-  fastapi_starter:
+  fastapi_template:
     build:
       context: .
     ports:

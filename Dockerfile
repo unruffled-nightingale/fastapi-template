@@ -18,4 +18,4 @@ WORKDIR /app
 
 EXPOSE 8000
 
-ENTRYPOINT ["uvicorn", "fastapi_starter.main:app", "--host", "0.0.0.0", "--port", "8000"]
+ENTRYPOINT ["uvicorn", "fastapi_template.main:app", "--host", "0.0.0.0", "--port", "8000"]

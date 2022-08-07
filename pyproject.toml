@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "fastapi_starter"
+name = "fastapi_template"
 version = "0.1.0"
 description = "A simple starter for a FastAPI application"
 authors = ["unruffled-nightingale <unruffled.nightingale@gmail.com>"]

@@ -3,7 +3,7 @@ from typing import Generator
 import pytest
 from fastapi.testclient import TestClient
 
-from fastapi_starter.main import app
+from fastapi_template.main import app
 
 
 @pytest.fixture(scope="module")
