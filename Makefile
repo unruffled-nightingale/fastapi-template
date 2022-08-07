@@ -18,6 +18,9 @@ test-unit:
 test-integration:
 	pytest tests/integration -v --cov-config pyproject.toml
 
+test-acceptance:
+    APPLICATION_URL=https://fastapi-template.unruffled-nightingale.com/ pytest tests/acceptance
+
 check-all: check-poetry check-lint check-mypy check-bandit check-private-keys check-format
 
 check-poetry:
