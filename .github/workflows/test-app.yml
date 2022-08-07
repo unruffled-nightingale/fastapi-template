@@ -23,9 +23,13 @@ jobs:
         poetry install
       env:
         POETRY_VIRTUALENVS_CREATE: false
+  check-linting-formatting-security:
+    - needs: build
     - name: Check linting, formatting and security
       run: |
         make check-all
+  run-tests:
+    - needs: build
     - name: Run tests
       run: |
         make test-all
