@@ -11,15 +11,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v3
+    - name: Install poetry
+      run:run: pipx install poetry
     - name: Set up Python 3.10
       uses: actions/setup-python@v4
       with:
         python-version: "3.10"
         cache: 'poetry'
-    - name: Installing dependencies
-      run: poetry install
-    - name: Checking linting, formatting and security
-      run: make check-all
-    - name: Running tests
-      run: make test-all
+    - run: poetry install
+    - run: make check-all
+    - run: make test-all
