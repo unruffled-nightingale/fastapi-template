@@ -1,4 +1,4 @@
-name: test application
+name: test application on pr
 
 on:
   pull_request:
@@ -24,4 +24,5 @@ jobs:
     - run: |
         make check-all
     - run: |
-        make test-all
+        make test-integration
+        make test-unit

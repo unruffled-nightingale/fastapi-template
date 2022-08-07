@@ -9,7 +9,7 @@ update:
 start:
 	uvicorn fastapi_template.main:app --reload
 
-test-all: test-integration test-unit
+test-all: test-acceptance test-integration test-unit
 
 test-unit:
 	pytest tests/unit -v --cov-config pyproject.toml --cov
@@ -17,6 +17,9 @@ test-unit:
 
 test-integration:
 	pytest tests/integration -v --cov-config pyproject.toml
+
+test-acceptance:
+    APPLICATION_URL=https://fastapi-template.unruffled-nightingale.com/ pytest tests/acceptance
 
 check-all: check-poetry check-lint check-mypy check-bandit check-private-keys check-format
 
