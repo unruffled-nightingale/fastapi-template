@@ -9,7 +9,7 @@ update:
 start:
 	uvicorn fastapi_template.main:app --reload
 
-test-all: test-integration test-unit
+test-all: test-acceptance test-integration test-unit
 
 test-unit:
 	pytest tests/unit -v --cov-config pyproject.toml --cov

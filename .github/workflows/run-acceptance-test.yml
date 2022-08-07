@@ -1,0 +1,25 @@
+name: scheduled acceptance test
+
+on:
+  schedule:
+    - cron:  '0 12 * * *'
+
+permissions:
+  contents: read
+
+jobs:
+  test-application:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v3
+      with:
+        python-version: "3.9"
+    - run: |
+        pip install -U pip
+        pip install poetry
+        poetry install
+      env:
+        POETRY_VIRTUALENVS_CREATE: false
+    - run: |
+        make test-acceptance
