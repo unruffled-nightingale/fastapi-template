@@ -1,5 +1,4 @@
 NAME=fastapi_template
-VERSION=$(shell git rev-parse HEAD)
 
 install:
 	poetry install
@@ -10,7 +9,7 @@ update:
 start:
 	uvicorn fastapi_template.main:app --reload
 
-test-all: test-unit test-integration
+test-all: test-integration test-unit
 
 test-unit:
 	pytest tests/unit -v --cov-config pyproject.toml --cov
