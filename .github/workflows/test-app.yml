@@ -12,20 +12,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Caching dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.local
-        key: poetry-${{ env.PYTHON_VERSION }}-${{ hashFiles('poetry.lock') }}
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
         python-version: "3.10"
+    - name: Caching dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.venv
+        key: poetry-${{ hashFiles('poetry.lock') }}
     - name: Installing dependencies
       run: |
         pip install -U pip
         pip install poetry
-        poetry install
+        poetry install --no-interaction --no-root
       env:
         POETRY_VIRTUALENVS_CREATE: false
     - name: Checking linting, formatting and security
