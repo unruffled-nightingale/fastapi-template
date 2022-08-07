@@ -13,24 +13,13 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
-      uses: actions/setup-python@v3
+    - uses: actions/setup-python@v4
       with:
         python-version: "3.10"
-    - name: Caching dependencies
-      uses: actions/cache@v3
-      with:
-        path: ~/.venv
-        key: poetry-${{ hashFiles('poetry.lock') }}
+        cache: 'poetry'
     - name: Installing dependencies
-      run: |
-        pip install -U pip
-        pip install poetry
-        poetry install --no-interaction --no-root
-      env:
-        POETRY_VIRTUALENVS_CREATE: false
+      run: poetry install
     - name: Checking linting, formatting and security
-      run: |
-        make check-all
+      run: make check-all
     - name: Running tests
-      run: |
-        make test-all
+      run: make test-all
