@@ -50,3 +50,14 @@ docker-build:
 
 docker-run: docker-build
 	docker run -p 8000:8000 -d $(NAME):latest
+
+docker-push:
+	echo NEED TO DO
+
+kube-apply:
+	kubectl apply -f .kube/service.yml
+	kubectl apply -f .kube/ingress.yml
+	kubectl apply -f .kube/deployment.yml
+
+kube-redeploy:
+	kubectl rollout restart deployment fastapi-template
