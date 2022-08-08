@@ -14,6 +14,8 @@ FROM python:3.10-slim
 COPY --from=build /usr/local /usr/local
 COPY . /app
 
+LABEL org.opencontainers.image.description = "A FastAPI template application"
+
 WORKDIR /app
 
 EXPOSE 8000
