@@ -13,7 +13,7 @@ test-all: test-acceptance test-integration test-unit
 
 test-unit:
 	pytest tests/unit -v --cov-config pyproject.toml --cov
-	coverage xml
+	coverage xml --fail-under 90
 
 test-integration:
 	pytest tests/integration -v --cov-config pyproject.toml
