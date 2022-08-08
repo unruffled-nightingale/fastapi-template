@@ -4,6 +4,6 @@ Please include a summary of the change and which issue is fixed. Please also inc
 
 ## Issue ticket number and link
 
-Please reference the ticker numebr associated with this PR.
+Please reference the ticker number associated with this PR.
 
 
