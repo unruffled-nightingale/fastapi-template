@@ -17,7 +17,11 @@ test-integration:
 	pytest tests/integration -v --cov-config pyproject.toml
 
 test-acceptance:
-    APPLICATION_URL=https://fastapi-template.unruffled-nightingale.com/ pytest tests/acceptance
+	APPLICATION_URL=https://fastapi-template.unruffled-nightingale.com/ pytest tests/acceptance
+
+test-load:
+	locust -f ./tests/load/test_main.py --users 10 --spawn-rate 1 -H https://fastapi-template.unruffled-nightingale.com/
+
 
 check-all: check-poetry check-lint check-mypy check-bandit check-private-keys check-format
 
