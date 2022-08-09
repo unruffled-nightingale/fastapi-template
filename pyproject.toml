@@ -26,7 +26,6 @@ testcontainers = "~3.6"
 types-requests = "~2"
 types-toml = "*"
 
-
 [build-system]
 requires = ["poetry-core>=1.0.0"]
 build-backend = "poetry.core.masonry.api"
