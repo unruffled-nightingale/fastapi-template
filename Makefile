@@ -56,7 +56,7 @@ docker-stop:
 	docker stop $(shell docker ps -aqf "ancestor=fastapi_template")
 
 docker-push: docker-build
-    docker tag fastapi_template ghcr.io/unruffled-nightingale/fastapi_template:latest
+	docker tag fastapi_template ghcr.io/unruffled-nightingale/fastapi_template:latest
 	docker push ghcr.io/unruffled-nightingale/fastapi_template:latest
 
 kube-apply:
