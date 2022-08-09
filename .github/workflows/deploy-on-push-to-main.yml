@@ -4,11 +4,9 @@ on:
   push:
     branches:
       - main
-env:
-  IMAGE_NAME: fastapi_template
 
 jobs:
-  push:
+  deploy:
     runs-on: ubuntu-latest
     if: github.event_name == 'push'
     steps:
@@ -18,5 +16,4 @@ jobs:
       - run: |
           mkdir $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > $HOME/.kube/config
-          make kube-apply
           make kube-redeploy
