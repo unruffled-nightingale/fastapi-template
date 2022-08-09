@@ -18,5 +18,5 @@ jobs:
       - run: |
           mkdir $HOME/.kube
           echo "${{ secrets.KUBE_CONFIG }}" | base64 -d > $HOME/.kube/config
-          make kubectl-apply
-          make kubectl-redeploy
+          make kube-apply
+          make kube-redeploy
