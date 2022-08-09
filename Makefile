@@ -1,5 +1,3 @@
-NAME=fastapi_template
-
 install:
 	poetry install
 
@@ -49,10 +47,17 @@ format:
 	poetry run trailing-whitespace-fixer
 
 docker-build:
-	docker build -t $(NAME):latest .
+	docker build -t fastapi_template .
 
 docker-run: docker-build
-	docker run -p 8000:8000 -d $(NAME):latest
+	docker run -p 8000:8000 -d fastapi_template
+
+docker-stop:
+	docker stop $(shell docker ps -aqf "ancestor=fastapi_template")
+
+docker-push: docker-build
+	docker tag fastapi_template ghcr.io/unruffled-nightingale/fastapi_template:latest
+	docker push ghcr.io/unruffled-nightingale/fastapi_template:latest
 
 kube-apply:
 	kubectl apply -f .kube/service.yml
