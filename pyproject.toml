@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "fastapi_template"
-version = "0.1.0"
+version = "0.1.1"
 description = "A simple starter for a FastAPI application"
 authors = ["unruffled-nightingale <unruffled.nightingale@gmail.com>"]
 
@@ -8,7 +8,6 @@ authors = ["unruffled-nightingale <unruffled.nightingale@gmail.com>"]
 python = "^3.9"
 fastapi = "~0.79"
 requests = "~2"
-types-requests = "~2"
 uvicorn = { extras = ["standard"], version = "~0.18" }
 
 [tool.poetry.dev-dependencies]
@@ -24,6 +23,9 @@ pytest = "*"
 pytest-cov = "*"
 pytest-randomly = "*"
 testcontainers = "~3.6"
+types-requests = "~2"
+types-toml = "*"
+
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
