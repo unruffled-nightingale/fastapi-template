@@ -1,11 +1,8 @@
-FastAPI template application
-============================
----
+![Alt Text](./.docs/static/title_image.png)
 
-The purpose of this codebase is to provide a template for building a production ready API using the best current technology, approaches and standards for a backend API in 2022.
+### A template for building a production ready API using the best current technology, approaches and standards for a backend API in 2022.
 
-Design documentation is provided that outlines the goals of this repository, as well as the technologies used and the reason for their inclusion (not yet implemented).
-
+## Overview 
 The starter application provides 'out the box':
 
 * **An API web application** (using FastAPI's web framework), which includes:
@@ -42,6 +39,7 @@ The starter application provides 'out the box':
    * Pull Request templating to encourage high quality Pull Requests
    * A Makefile that contains all available functionality in the repository
 
+Design documentation is provided that outlines the goals of this repository, as well as the technologies used and the reason for their inclusion (not yet implemented).
 ___
 
 Available Scripts
@@ -128,7 +126,6 @@ Re-deploys the _"fastapi_template"_ deployment in kubernetes.
 
 # Features not yet implemented
 
-- Add picture
 - Add health check
 - Add OpenTelemetry metrics
 - Add design documentation  
