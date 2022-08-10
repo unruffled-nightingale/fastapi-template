@@ -2,6 +2,10 @@
 
 ### A template for building a production ready API using the best current technology, approaches and standards for a backend API in 2022.
 
+## Contents
+- [Overview](#Overview)
+- [Available scripts](#Overview)
+
 ## Overview 
 The starter application provides 'out the box':
 
@@ -34,7 +38,7 @@ The starter application provides 'out the box':
    * Automatic deployment to kubernetes using (using GitHub Actions)
    * Schedules acceptance tests to run daily
 
-* Other
+* **Other**
    * Pre-commit hooks that run unit tests, checks security and code-style checks, and prevents merging to 'main'
    * Pull Request templating to encourage high quality Pull Requests
    * A Makefile that contains all available functionality in the repository
@@ -42,8 +46,7 @@ The starter application provides 'out the box':
 Design documentation is provided that outlines the goals of this repository, as well as the technologies used and the reason for their inclusion (not yet implemented).
 ___
 
-Available Scripts
-=================
+## Available scripts
 
 All actions that are used in the repository are available in the Makefile.
 All pre-commit hooks, GitHub workflows, and build tooling use this Makefile to perform these actions.
