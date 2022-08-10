@@ -22,7 +22,6 @@ test-acceptance:
 test-load:
 	locust -f ./tests/load/test_main.py --users 10 --spawn-rate 1 -H https://fastapi-template.unruffled-nightingale.com/
 
-
 check-all: check-poetry check-lint check-mypy check-bandit check-private-keys check-format
 
 check-poetry:

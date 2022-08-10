@@ -78,6 +78,9 @@ Runs integration tests
 ### `make test-acceptance`
 Runs acceptance tests
 
+### `make test-load`
+Runs load tests
+
 ### `make check-all`
 Runs all code style and security checks
 
