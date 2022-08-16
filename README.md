@@ -137,6 +137,8 @@ Re-deploys the _"fastapi_template"_ deployment in kubernetes.
 - Add design documentation  
 - Add GitHub action to run on template download  
 - Add Grafana dashboard
+- Add Trivy docker scanning
+- Add healthcheck to dockerfile  
 - Add performance testing
 - Add CI-CD behaviour on tagging
 - Add dev and staging Kubernetes deployments
