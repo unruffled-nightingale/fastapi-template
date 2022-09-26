@@ -12,7 +12,7 @@ uvicorn = { extras = ["standard"], version = "~0.18" }
 toml = "~0.10"
 
 [tool.poetry.dev-dependencies]
-testcontainers = "~3.6"
+testcontainers = "~3.7"
 locust = "~2.11"
 types-requests = "~2"
 types-toml = "~0.10"
