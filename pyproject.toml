@@ -8,7 +8,7 @@ authors = ["unruffled-nightingale <unruffled.nightingale@gmail.com>"]
 python = "^3.9"
 fastapi = "~0.79"
 requests = "~2"
-uvicorn = { extras = ["standard"], version = "~0.18" }
+uvicorn = { extras = ["standard"], version = "~0.19" }
 toml = "~0.10"
 
 [tool.poetry.dev-dependencies]
