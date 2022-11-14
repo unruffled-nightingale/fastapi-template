@@ -1,4 +1,4 @@
-![Alt Text](./.docs/static/title_image.png)
+![Alt Text](./docs/static/title_image.png)
 
 ### A template for building a production ready API using the best current technology, approaches and standards for a backend API in 2022.
 
