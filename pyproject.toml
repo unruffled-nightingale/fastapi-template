@@ -20,6 +20,7 @@ bandit = "*"
 black = "*"
 coverage = "*"
 flake8 = "*"
+flake8-pyproject="*"
 isort = "*"
 mypy = "*"
 pre-commit = "*"
@@ -37,6 +38,10 @@ build-backend = "poetry.core.masonry.api"
 # https://pycqa.github.io/isort/docs/configuration/options.html
 line_length = 120
 use_parentheses = "True"
+
+[tool.flake8]
+max-line-length = 120
+exclude = "venv,.venv,.git,__pycache__,build,dist"
 
 [tool.pytest.ini_options]
 # https://flake8.pycqa.org/en/latest/user/options.html#configuration-options
