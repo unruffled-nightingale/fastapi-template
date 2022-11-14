@@ -6,7 +6,7 @@ authors = ["unruffled-nightingale <unruffled.nightingale@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^3.9"
-fastapi = "~0.79"
+fastapi = "~0.87"
 requests = "~2"
 uvicorn = { extras = ["standard"], version = "~0.18" }
 toml = "~0.10"
